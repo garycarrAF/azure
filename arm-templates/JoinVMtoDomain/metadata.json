@@ -1,0 +1,11 @@
+{
+  "$schema": "https://aka.ms/azure-quickstart-templates-metadata-schema#",
+  "type": "QuickStart",
+  "itemDisplayName": "Join a VM to an existing domain",
+  "description": "This template demonstrates how to join a VM to a private AD domain up in cloud.",
+  "summary": "This template joins a VM to an existing domain",
+  "githubUsername": "garycarrAF",
+  "dateUpdated": "2019-03-04"
+}
+
+
