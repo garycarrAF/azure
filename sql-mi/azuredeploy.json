@@ -57,7 +57,7 @@
         "networkInterfaceName": "[concat(parameters('virtualMachineName'),'-nic0')]",
         "publicIPAddressName": "[concat(parameters('virtualMachineName'),'-pip')]",
         "networkSecurityGroupName": "[concat(parameters('virtualMachineName'),'-nsg')]",
-        "subnetResourceGroup": "[parameters('subnetResourceGroupName')]"
+        "subnetResourceGroup": "[parameters('subnetResourceGroupName')]",
         "scriptFileUri": "[concat(parameters('baseUrl'),'/installSSMS.ps1')]"
     },
     "resources": [
