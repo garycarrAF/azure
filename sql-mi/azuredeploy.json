@@ -38,7 +38,13 @@
             "metadata": {
                 "description": "VM subnet name."
             }
-        }
+        },
+        "baseUri": {
+            "type": "string",
+            "metadata": {
+                "description": "Base Uri."
+            }
+		}			
     },
     "variables": {
         "virtualMachineSize": "Standard_B2s",
