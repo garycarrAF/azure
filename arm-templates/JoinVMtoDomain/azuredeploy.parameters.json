@@ -2,17 +2,20 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
+    "existingVNETResourceGroupName": {
+      "value": "af-core-net-rg"
+    },
     "existingVNETName": {
-      "value": "myvnet"
+      "value": "hub-vnet"
     },
     "existingSubnetName": {
-      "value": "subnet"
+      "value": "infra"
     },
     "vmSize": {
       "value": "Standard_A2"
     },
     "domainToJoin": {
-      "value": "contoso.local"
+      "value": "afcorp.afg"
     },
     "domainUsername": {
       "value": "azuerUser"
@@ -24,13 +27,13 @@
       "value": 3
     },
     "vmAdminUsername": {
-      "value": "azureUser"
+      "value": "vmadmin"
     },
     "vmAdminPassword": {
-      "value": "P@ssword!"
+      "value": "P@55word19!!"
     },
     "dnsLabelPrefix": {
-      "value": "GEN-UNIQUE" 
+      "value": "af-vm" 
     }
   }
 }
