@@ -42,7 +42,7 @@
         "subnetResourceGroupName": {
             "type": "string",
             "metadata": {
-                "description": "Resource Group name where the subnet is found."
+                "description": "Resource Group name where the subnet is located."
             }
         },
         "baseUrl": {
