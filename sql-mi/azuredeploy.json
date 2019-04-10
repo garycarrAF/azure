@@ -39,10 +39,10 @@
                 "description": "VM subnet name."
             }
         },
-        "baseUri": {
+        "baseUrl": {
             "type": "string",
             "metadata": {
-                "description": "Base Uri."
+                "description": "Base Url."
             }
 		}			
     },
