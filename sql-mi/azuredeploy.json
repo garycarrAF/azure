@@ -39,6 +39,12 @@
                 "description": "VM subnet name."
             }
         },
+        "subnetResourceGroupName": {
+            "type": "string",
+            "metadata": {
+                "description": "Resource Group name where the subnet is found."
+            }
+        },
         "baseUrl": {
             "type": "string",
             "metadata": {
@@ -51,6 +57,7 @@
         "networkInterfaceName": "[concat(parameters('virtualMachineName'),'-nic0')]",
         "publicIPAddressName": "[concat(parameters('virtualMachineName'),'-pip')]",
         "networkSecurityGroupName": "[concat(parameters('virtualMachineName'),'-nsg')]",
+        "subnetResourceGroup": "[parameters('subnetResourceGroupName')]"
         "scriptFileUri": "[concat(parameters('baseUrl'),'/installSSMS.ps1')]"
     },
     "resources": [
@@ -140,7 +147,7 @@
                         "name": "ipconfig1",
                         "properties": {
                             "subnet": {
-                                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworkName'), parameters('managementSubnetName'))]"
+                                "id": "[resourceId(parameters('subnetResourceGroup'),'Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworkName'), parameters('managementSubnetName'))]"
                             },
                             "privateIPAllocationMethod": "Dynamic",
                             "publicIpAddress": {

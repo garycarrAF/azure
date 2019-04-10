@@ -206,6 +206,7 @@ $templateParameters = @{
     virtualMachineName  = $virtualMachineName
     administratorLogin  = $administratorLogin
     administratorLoginPassword  = $administratorLoginPassword
+	subnetResourceGroupName	= $networkResourceGroupName
 	baseUrl = $scriptUrlBase
 }
 
