@@ -1,7 +1,8 @@
 $parameters = $args[0]
 
 $subscriptionId = $parameters['subscriptionId']
-$resourceGroupName = $parameters['resourceGroupName']
+$vmResourceGroupName = $parameters['vmResourceGroupName']
+$networkResourceGroupName = $parameters['networkResourceGroupName']
 $virtualMachineName = $parameters['virtualMachineName']
 $virtualNetworkName = $parameters['virtualNetworkName']
 $managementSubnetName = $parameters['subnetName']
@@ -175,7 +176,7 @@ VerifyPSVersion
 EnsureLogin
 SelectSubscriptionId -subscriptionId $subscriptionId
 
-$virtualNetwork = LoadVirtualNetwork -resourceGroupName $resourceGroupName -virtualNetworkName $virtualNetworkName
+$virtualNetwork = LoadVirtualNetwork -resourceGroupName $networkResourceGroupName -virtualNetworkName $virtualNetworkName
 
 $subnets = $virtualNetwork.Subnets.Name
 
@@ -208,6 +209,6 @@ $templateParameters = @{
 	baseUrl = $scriptUrlBase
 }
 
-New-AzureRmResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri ($scriptUrlBase+'/azuredeploy.json?t='+ [DateTime]::Now.Ticks) -TemplateParameterObject $templateParameters
+New-AzureRmResourceGroupDeployment -ResourceGroupName $vmResourceGroupName -TemplateUri ($scriptUrlBase+'/azuredeploy.json?t='+ [DateTime]::Now.Ticks) -TemplateParameterObject $templateParameters
 
 Write-Host "Deployment completed."
